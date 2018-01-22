@@ -5,7 +5,7 @@ const Item = (function () {
     console.log('Entered valid');
     if (name === undefined || name === '') {
       console.log('Entered if statement');
-      throw new Error('Name does not exist.')
+      throw new Error('Name does not exist.');
     } else {
       console.log('Validation success');
     }
