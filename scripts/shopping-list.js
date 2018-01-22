@@ -47,7 +47,7 @@ const shoppingList = (function(){
     }
   
     // render the shopping list in the DOM
-    console.log('`render` ran');
+    // console.log('`render` ran');
     const shoppingListItemsString = generateShoppingItemsString(items);
   
     // insert that HTML into the DOM
@@ -58,14 +58,14 @@ const shoppingList = (function(){
   function addItemToShoppingList(itemName) {
     // store.items.push({ id: cuid(), name: itemName, checked: false });
     try{
-    	console.log('adding new item with module');
+    	// console.log('adding new item with module');
     	Item.validateName(itemName);
     	store.items.push(Item.create(itemName));
     	render();
     }
     catch(e){
-    	console.log('cannot add item: {error.message}');
-    	console.log(""+e);
+    	// console.log('cannot add item: {error.message}');
+    	// console.log(""+e);
     }
   }
   
@@ -95,13 +95,13 @@ const shoppingList = (function(){
     });
   }
   
-  function toggleCheckedItemsFilter() {
-    store.hideCheckedItems = !store.hideCheckedItems;
-  }
+  // function toggleCheckedItemsFilter() {
+  //   store.hideCheckedItems = !store.hideCheckedItems;
+  // }
   
-  function setSearchTerm(val) {
-    store.searchTerm = val;
-  }
+  // function setSearchTerm(val) {
+  //   store.searchTerm = val;
+  // }
   
   
   function handleDeleteItemClicked() {
@@ -129,7 +129,8 @@ const shoppingList = (function(){
   
   function handleToggleFilterClick() {
     $('.js-filter-checked').click(() => {
-      toggleCheckedItemsFilter();
+      store.toggleCheckedFilter();
+
       render();
     });
   }
@@ -137,7 +138,7 @@ const shoppingList = (function(){
   function handleShoppingListSearch() {
     $('.js-shopping-list-search-entry').on('keyup', event => {
       const val = $(event.currentTarget).val();
-      setSearchTerm(val);
+      store.setSearchTerm(val);
       render();
     });
   }

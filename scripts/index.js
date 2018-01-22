@@ -16,5 +16,6 @@ console.log(store.findAndToggleChecked(ourIdNum));
 
 let ourEditNum = store.items[1].id;
 console.log(store.findAndDelete(ourEditNum));
+store.toggleCheckedFilter();
 
-shoppingList.render()
+shoppingList.render();
