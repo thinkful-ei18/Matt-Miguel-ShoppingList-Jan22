@@ -6,7 +6,15 @@ $(document).ready(function() {
   shoppingList.bindEventListeners();
   shoppingList.render();
 });
-console.log(store);
+
 
 
 shoppingList.render();
+store.addItem('eggs!!');
+let ourIdNum = store.items[0].id;
+console.log(ourIdNum+' this is our id num for apples');
+console.log(store.findById(ourIdNum));
+console.log(store.findAndToggleChecked(ourIdNum));
+
+
+
