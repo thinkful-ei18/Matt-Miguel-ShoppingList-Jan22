@@ -7,8 +7,6 @@ $(document).ready(function() {
   shoppingList.render();
 });
 
-
-
 shoppingList.render();
 store.addItem('eggs!!');
 let ourIdNum = store.items[0].id;
@@ -16,5 +14,7 @@ console.log(ourIdNum+' this is our id num for apples');
 console.log(store.findById(ourIdNum));
 console.log(store.findAndToggleChecked(ourIdNum));
 
+let ourEditNum = store.items[1].id;
+console.log(store.findAndDelete(ourEditNum));
 
-
+shoppingList.render()
